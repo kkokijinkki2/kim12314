@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="now" class="java.util.Date" />
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="today" />
-오늘 날짜 : <c:out value="${today}"/>
-
-
-
+어린이날은 어린이다
 </body>
 </html>

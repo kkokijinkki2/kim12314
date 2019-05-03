@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>시작페이지</title>
+<title>Insert title here</title>
 </head>
 <body>
-시작페이지
-<jsp:forward page="/MemberLoginForm.mo"/>
+노동절
 </body>
-</html>
+</html>ㅏ
