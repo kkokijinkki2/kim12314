@@ -17,6 +17,16 @@ public class ProductInfoAction implements Action{
       HttpSession session = request.getSession();
       ProductDAO productdao = new ProductDAO();
       String category=request.getParameter("category");
+      
+      if(session.getAttribute("id").equals(null)) {
+    	  PrintWriter out = response.getWriter();
+          out.println("<script>");
+          out.println("alert('뭔가 잘못됨')");
+          out.println("location.href = '로그인창으로'");
+          out.print("</script>");
+          out.close();
+          return null;
+      }
       if(productdao.researchProduct(category) == null) {
          PrintWriter out = response.getWriter();
          out.println("<script>");

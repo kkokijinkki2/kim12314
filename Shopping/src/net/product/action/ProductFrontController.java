@@ -82,8 +82,6 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 	         }catch(Exception e) {
 	            e.printStackTrace();
 	         }
-
-
 	    }else if(command.equals("/ProductDetailAction.po")) {
 		     action = new ProductDetailAction();
 		     try {

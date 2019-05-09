@@ -61,18 +61,9 @@
   <% }else{%>
   	<%for(ProductBean bean : beans){ %>
    		<tr>
-<<<<<<< HEAD
-      	<td class = "aa" style = "color:black;">
-         
-          <a href =""?code=<%=bean.getProduct_code() %>><img src="<%=bean.getProduct_image() %>"></a>  <br>
-    	     제품명: <%=bean.getProduct_name() %><br>
-        	 가격: <%=bean.getProduct_price() %>
-   
-     	 </td>
-=======
    			
       		<td class = "aa" style = "color:black;">
-         	<a href="ProductDetailAction.po?code=<%=bean.getProduct_code() %>"><img src="<%=bean.getProduct_image()%>"></a>
+         	<a href="OrderDetailView.oo?code=<%=bean.getProduct_code() %>"><img src="<%=bean.getProduct_image()%>"></a>
          	</td>
     	    <td>제품명: <%=bean.getProduct_name() %></td>
         	<td>가격: <%=bean.getProduct_cost() %></td>       	
