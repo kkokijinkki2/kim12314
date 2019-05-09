@@ -11,6 +11,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import net.product.db.ProductBean;
+
 public class OrderDAO {
 
 	Connection conn = null;
@@ -106,5 +108,52 @@ public class OrderDAO {
 		}
 		return null;
 	}
+	
+	//상품상세정보용
 
+		public ProductBean detailOrder(int code) throws SQLException{
+			String sql = "select * from product where product_code = ?";
+			try {
+				pt = conn.prepareStatement(sql);
+				pt.setInt(1, code);
+				re = pt.executeQuery();
+				ProductBean productbean = new ProductBean();
+				
+				if(!re.next()) {return null;}
+				
+				productbean.setProduct_code(re.getInt("product_code"));
+				productbean.setProduct_category(re.getString("product_category"));
+				productbean.setProduct_name(re.getString("product_name"));
+				productbean.setProduct_count(re.getInt("product_count"));
+				productbean.setProduct_image(re.getString("product_image"));
+				productbean.setProduct_cost(re.getInt("product_cost"));
+				productbean.setProduct_price(re.getInt("product_price"));
+				productbean.setProduct_detail(re.getString("product_detail"));
+				String date = String.valueOf(re.getTimestamp("product_date"));
+				productbean.setProduct_date(date);
+				
+				
+				return productbean;
+			}catch(RuntimeException er) {
+				er.printStackTrace();
+			}finally {
+				try {
+
+					if(re!=null) { re.close(); re=null;}
+					if(pt!=null) { pt.close(); pt=null;}
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+			return null;
+		}
+
+		//커넥트 닫기
+		public void conClose() {
+			try {
+				conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 }

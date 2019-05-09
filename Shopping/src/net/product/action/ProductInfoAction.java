@@ -21,8 +21,8 @@ public class ProductInfoAction implements Action{
       if(session.getAttribute("id").equals(null)) {
     	  PrintWriter out = response.getWriter();
           out.println("<script>");
-          out.println("alert('뭔가 잘못됨')");
-          out.println("location.href = '로그인창으로'");
+          out.println("alert('Somethig is wrong')");
+          out.println("location.href = 'MemberLoginForm.mo'");
           out.print("</script>");
           out.close();
           return null;
@@ -30,7 +30,7 @@ public class ProductInfoAction implements Action{
       if(productdao.researchProduct(category) == null) {
          PrintWriter out = response.getWriter();
          out.println("<script>");
-         out.println("alert('뭔가 잘못됨')");
+         out.println("alert('Somethig is wrong')");
          out.print("</script>");
          out.close();
          return null;

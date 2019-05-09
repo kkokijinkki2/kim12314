@@ -67,7 +67,7 @@
          	</td>
     	    <td>제품명: <%=bean.getProduct_name() %></td>
         	<td>가격: <%=bean.getProduct_cost() %></td>       	
->>>>>>> branch 'master' of https://github.com/kim12314/kim12314.git
+
          </tr>
    	<%}%>
    <%}%>
