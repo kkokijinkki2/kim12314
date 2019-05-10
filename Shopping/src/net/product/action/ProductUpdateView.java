@@ -26,14 +26,17 @@ public class ProductUpdateView implements Action{
 			out.close();
 			return null;
 		}
-		PrintWriter out = response.getWriter();
-		out.println("<script>");
-		out.println("alert('Go to the Modifypage')");
-		out.println("location.href ='./product/Product_modify.jsp'");
-		out.print("</script>");
-		out.close();
+//		PrintWriter out = response.getWriter();
+//		out.println("<script>");
+//		out.println("alert('Go to the Modifypage')");
+//		out.println("location.href ='./product/Product_modify.jsp'");
+//		out.print("</script>");
+//		out.close();
+		ActionForward forward = new ActionForward();
+		forward.setRedirect(true);
+		forward.setPath("ProductModify.po");		
 		productdao.conClose();
-		return null;
+		return forward;
 		
 	}
 }

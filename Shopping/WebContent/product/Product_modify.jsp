@@ -9,14 +9,7 @@
 <meta charset="UTF-8">
 <title>상품목록</title>
 <script type="text/javascript">
-	function preview(){
-		document.getElementById("img").value = document.getElementById("image").value;
-	}
-	
-	function afterview(value){
-		document.getElementById("img").value = value;
-		
-	}
+	//이미지 미리보기 할려고함
 </script>
 </head>
 <body>
@@ -52,12 +45,12 @@
 			</table>
 	</tr>
 	<tr>
-		<td>이미지</td><td colspan="5">
-					<input type="file" oninput = "afterview(<%=request.getParameter("image") %>)" size=40 id="image" name="image" value = "<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_image()%>">
+		<td><a href="imageDetail.po">이미지</a></td>
+		<td colspan="5">
+			현재 사진<img src="<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_image()%>">
+			수정 후 사진<img src="<%=session.getAttribute("image")%>" name = "image" >
 			<br><br>
 		</td>
-	<tr>
-		<td><img id="img"/></td>
 	</tr>
 	<tr>
 		<td>수량</td><td colspan="3"><input type="text" id="count" name="count" value = <%=((ProductBean)session.getAttribute("detailProduct")).getProduct_count() %>></td><td>상품등록일</td>

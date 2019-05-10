@@ -14,7 +14,8 @@ import net.product.db.ProductDAO;
 public class ProductDetailAction implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		HttpSession session = request.getSession();
-		ProductDAO productdao = new ProductDAO();		
+		ProductDAO productdao = new ProductDAO();	
+		
 		int code = Integer.parseInt(request.getParameter("code"));
 		
 		if(productdao.detailProduct(code) == null) {

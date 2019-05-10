@@ -10,7 +10,6 @@
 <title>상품등록</title>
 
 
-
 </head>
 <body>
 <div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
@@ -40,10 +39,12 @@
       <td colspan="6"><textarea rows="10" cols="110" name="detail" id="detail"></textarea></td>
    </tr>
    <tr>
-      <td colspan="5"><a href="./product/image.jsp">이미지</a></td>
+      <td colspan="5"><a href="imageAdd.po">이미지</a></td>
    </tr>
    <tr>
-      <td><img src="<%=request.getParameter("image")%>"></td>
+      <td><img src="C:/Users/Thug/Desktop/project/photo/<%=request.getParameter("image")%>"></td>
+      C:/Users/Thug/Desktop/project/photo/<%=request.getParameter("image")%>
+      
 
    </tr>
    <tr>

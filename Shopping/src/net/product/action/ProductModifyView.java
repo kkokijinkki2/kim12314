@@ -11,22 +11,15 @@ import net.action.ActionForward;
 import net.product.db.ProductBean;
 import net.product.db.ProductDAO;
 
-public class ProductListAction implements Action{
+public class ProductModifyView implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
-		HttpSession session = request.getSession();
 		ProductDAO productdao = new ProductDAO();
-		if(productdao.getListProduct() == null) {
-			PrintWriter out = response.getWriter();
-			out.println("<script>");
-			out.println("alert('There is no data please try again')");
-			out.print("</script>");
-			out.close();
-			return null;
-		}
-		session.setAttribute("productbean", productdao.getListProduct());
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("image", request.getParameter("image"));
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(false);
-		forward.setPath("./product/Product_list.jsp");
+		forward.setRedirect(true);
+		forward.setPath("ProductModify.po");		
 		productdao.conClose();
 		return forward;
 		

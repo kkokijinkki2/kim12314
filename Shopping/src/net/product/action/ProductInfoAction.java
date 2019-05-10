@@ -27,6 +27,7 @@ public class ProductInfoAction implements Action{
           out.close();
           return null;
       }
+      
       if(productdao.researchProduct(category) == null) {
          PrintWriter out = response.getWriter();
          out.println("<script>");
@@ -37,10 +38,6 @@ public class ProductInfoAction implements Action{
       }
       session.setAttribute("infoproduct", productdao.researchProduct(category));
       List<ProductBean> beans = (List<ProductBean>)session.getAttribute("infoproduct"); 
-      for(ProductBean bean: beans) {
-         System.out.println(bean.getProduct_category());
-      
-      }
    
       ActionForward forward = new ActionForward();
       forward.setRedirect(false);

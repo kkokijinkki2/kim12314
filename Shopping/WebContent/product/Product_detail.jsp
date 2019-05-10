@@ -8,6 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>상품목록</title>
+<style type="text/css">
+	img{
+		image-rendering:auto;
+	}
+	
+</style>
 </head>
 <body>
 <div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
