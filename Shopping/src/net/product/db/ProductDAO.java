@@ -83,18 +83,25 @@ public class ProductDAO {
 		java.sql.Timestamp date = java.sql.Timestamp.valueOf(productbean.getProduct_date());
 		try {
 			pt = conn.prepareStatement(sql);
-			
 			pt.setString(1, productbean.getProduct_category());
+			System.out.println(productbean.getProduct_category());
 			pt.setString(2, productbean.getProduct_name());
+			System.out.println(productbean.getProduct_name());
 			pt.setInt(3, productbean.getProduct_count());
+			System.out.println(productbean.getProduct_count());
 			pt.setString(4, productbean.getProduct_image());
+			System.out.println(productbean.getProduct_image());
 			pt.setInt(5, productbean.getProduct_cost());
+			System.out.println(productbean.getProduct_cost());
 			pt.setInt(6, productbean.getProduct_price());
+			System.out.println(productbean.getProduct_price());
 			pt.setString(7, productbean.getProduct_detail());
+			System.out.println(productbean.getProduct_detail());
 			pt.setTimestamp(8, date);
+			System.out.println(date);
 			
 			pt.executeUpdate();
-			
+			System.out.println("13");
 			return true;
 			
 		}catch(RuntimeException er) {

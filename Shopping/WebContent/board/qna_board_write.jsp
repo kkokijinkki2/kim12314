@@ -50,7 +50,7 @@ table.style_Table td {
 						<td style="font-family: 돋음; font-size: 20" height="16">
 							<div align="center">글쓴이</div>
 						</td>
-						<td style="font-size: 20";>${id} <input name="BOARD_NAME"
+						<td style="font-size: 20">${id} <input name="BOARD_NAME"
 							type="hidden" size="10" maxlength="10" value="${id}" readonly />
 						</td>
 					</tr>
@@ -60,7 +60,7 @@ table.style_Table td {
 							<div align="center">비밀번호</div>
 						</td>
 						<td><input name="BOARD_PASS" style="font-size: 20"
-							;type="password" size="20" maxlength="20" value="" /></td>
+							type="password" size="20" maxlength="20" value="" /></td>
 					</tr>
 				
 					<tr>

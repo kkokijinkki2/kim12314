@@ -42,8 +42,7 @@
       <td colspan="5"><a href="imageAdd.po">이미지</a></td>
    </tr>
    <tr>
-      <td><img src="C:/Users/Thug/Desktop/project/photo/<%=request.getParameter("image")%>"></td>
-      C:/Users/Thug/Desktop/project/photo/<%=request.getParameter("image")%>
+      <td><img src="<%=request.getParameter("image")%>"></td>
       
 
    </tr>

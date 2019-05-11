@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품목록</title>
+<title>상품상세</title>
 <style type="text/css">
 	img{
 		image-rendering:auto;
@@ -17,7 +17,7 @@
 </head>
 <body>
 <div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
-<h2>상품등록</h2>
+<h2>상품상세</h2>
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date"/>
 
@@ -60,7 +60,7 @@
 		<td>수량</td><td colspan="3">&nbsp;:&nbsp;<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_count() %></td>
 		<td>상품등록일</td>
 		<td>
-			<input type="text" name="date" id="date" value="${date }" readonly>
+			<input type="text" name="date" id="date" value="${date}" readonly>
 		</td>
 	</tr>
 	<tr align="center">

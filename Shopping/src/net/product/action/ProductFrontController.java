@@ -23,7 +23,7 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 		System.out.println(contextPath);
 		System.out.println(command);
 		
-		if(command.equals("/product/ProductAddAction.po")) {
+		if(command.equals("/ProductAddAction.po")) {
 			action = new ProductAddAction();
 			try {
 				forward = action.execute(request, response);
@@ -122,7 +122,7 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 			forward=new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./product/image.jsp");
-		}else if(command.equals("/product/imageAdd.po")) {
+		}else if(command.equals("/imageAdd.po")) {
 			forward=new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./product/imageAdd.jsp");
