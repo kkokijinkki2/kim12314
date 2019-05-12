@@ -1,4 +1,4 @@
-package net.product.action;
+package net.Order.action;
 
 import java.io.PrintWriter;
 
@@ -8,16 +8,20 @@ import javax.servlet.http.HttpSession;
 
 import net.action.Action;
 import net.action.ActionForward;
-import net.product.db.ProductBean;
-import net.product.db.ProductDAO;
+import net.Order.db.*;
 
-public class ProductListAction implements Action{
+
+public class OrderListAction implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		HttpSession session = request.getSession();
-		ProductDAO productdao = new ProductDAO();
+		OrderDAO orderdao = new OrderDAO();
 		
 		
-		if(productdao.getListProduct() == null) {
+		String id= (String)session.getAttribute("id");
+		
+		System.out.println(id);
+		
+		if(orderdao.getListOrder(id) == null) {
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('There is no data please try again')");
@@ -25,11 +29,11 @@ public class ProductListAction implements Action{
 			out.close();
 			return null;
 		}
-		session.setAttribute("productbean", productdao.getListProduct());
+		session.setAttribute("orderbean", orderdao.getListOrder(id));
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./product/Product_list.jsp");
-		productdao.conClose();
+		forward.setPath("./order/Order_List.jsp");
+		orderdao.conClose();
 		return forward;
 		
 	}

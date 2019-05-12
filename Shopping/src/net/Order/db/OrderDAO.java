@@ -33,22 +33,42 @@ public class OrderDAO {
 	// 디비에 주문 상품 등록하기
 	public boolean insertOrder(OrderBean orderbean) throws SQLException {
 
-		String sql = "insert into order values(sqe_code.nextval,?,?,?,?,?,?,?)";
+		String sql = "insert into orders values(SQE_ORDER_CODE.nextval,?,?,?,?,?,?,?,?,?)";
+		
 		java.sql.Timestamp date = java.sql.Timestamp.valueOf(orderbean.getOrder_date());
+
 		try {
+			
 			pt = conn.prepareStatement(sql);
 
 			pt.setString(1, orderbean.getOrder_id());
+			System.out.println(orderbean.getOrder_id());
+			
 			pt.setInt(2, orderbean.getOrder_code());
-			pt.setString(3, orderbean.getOrder_date());
-			pt.setString(4, orderbean.getOrder_result());
-			pt.setInt(5, orderbean.getOrder_price());
-			pt.setString(6, orderbean.getOrder_image());
-			pt.setInt(7, orderbean.getOrder_count());
-			pt.setTimestamp(8, date);
-
+			System.out.println(orderbean.getOrder_code());
+			
+			pt.setString(3, orderbean.getOrder_image());
+			System.out.println(orderbean.getOrder_image());
+			
+			pt.setTimestamp(4, date);
+			System.out.println(orderbean.getOrder_date());
+			
+			pt.setInt(5, orderbean.getOrder_count());
+			System.out.println(orderbean.getOrder_count());
+			
+			pt.setInt(6, orderbean.getOrder_price());
+			System.out.println(orderbean.getOrder_price());
+			
+			pt.setString(7, orderbean.getOrder_result());
+			System.out.println(orderbean.getOrder_result());
+			
+			pt.setDouble(8, orderbean.getOrder_point());
+			System.out.println(orderbean.getOrder_point());
+			
+			pt.setString(9, orderbean.getOrder_name());
+			System.out.println(orderbean.getOrder_name());
+			
 			pt.executeUpdate();
-
 			return true;
 
 		} catch (RuntimeException er) {
@@ -67,24 +87,36 @@ public class OrderDAO {
 	}
 
 	// 주문상품 리스트
-	public List getListOrder() throws SQLException {
-		String sql = "select * from order";
+	public List getListOrder(String id) throws SQLException {
+		String sql = "select * from orders where order_id=? ";
+		
 		List list = new ArrayList();
-
+	
 		try {
 			pt = conn.prepareStatement(sql);
+			
+			pt = conn.prepareStatement(sql);
+			
+			
+			pt.setString(1, id);
+			
 			re = pt.executeQuery();
+			
 			while (re.next()) {
-				OrderBean orderbean = new OrderBean();
+				
+				OrderBean orderbean = new OrderBean();	
+				
+				orderbean.setOrder_num(re.getInt("order_num"));
 				orderbean.setOrder_id(re.getString("order_id"));
 				orderbean.setOrder_code(re.getInt("order_code"));
-				String date = String.valueOf(re.getTimestamp("order_date"));
-				orderbean.setOrder_date(date);
+				orderbean.setOrder_image(re.getString("order_image"));
+				orderbean.setOrder_date(re.getString("order_date"));
+				orderbean.setOrder_count(re.getInt("order_count"));
 				orderbean.setOrder_result(re.getString("order_result"));
 				orderbean.setOrder_price(re.getInt("order_price"));
-				orderbean.setOrder_image(re.getString("order_image"));
-				orderbean.setOrder_count(re.getInt("order_count"));
-
+				orderbean.setOrder_point(re.getInt("order_point"));
+				orderbean.setOrder_name(re.getString("order_name"));
+			
 				list.add(orderbean);
 			}
 
