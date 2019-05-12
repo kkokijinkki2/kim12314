@@ -122,7 +122,6 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
       <div class="tab_container">
          <div id="Order1" class="tab_content">
 
-
             <select>
                <option>전체 주문처리상태</option>
                <option>입금전</option>
@@ -161,11 +160,19 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
                   <td>상품구매금액</td>
                   <td>주문처리상태</td>
                   <td>취소/교환/반품</td>
-                   <b>취소/교환/반품</b>
-                   
-            <hr>
                </tr>
-                  <%for(OrderBean bean : beans){ %>
+               <tr>
+                  <td colspan="9" align="center">나니모 나깟다</td>
+               </tr>
+
+            </table>
+            
+            
+            <b>취소/교환/반품</b>
+            <hr>
+
+            <table border="1">
+              	<%for(OrderBean bean : beans){ %>
 				<tr>
 					<td><%=bean.getOrder_date() %></td>
 					<td><a href="OrderDetailAction.oo?code=<%=bean.getOrder_code() %>">
@@ -186,12 +193,6 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
                      
                   <%} %>
                </tr>
-     
-            </table>
-           
-           
-           <table border="1">
-              	
             </table>
          </div>
          <div id="Order2" class="tab_content">

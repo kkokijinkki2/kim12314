@@ -1,16 +1,13 @@
 package net.Order.db;
 
 public class OrderBean {
-	private int Order_code; // 상품코드
+	private int Order_code; // 주문코드
 	private String Order_id; // 주문자아이디
 	private String Order_date; // 주문일
 	private String Order_image; // 주문상품이미지
 	private int Order_price; // 주문 상품가격
 	private int Order_count; // 주문 갯수
 	private String Order_result;// 주문처리상태
-	private int Order_num;//주문코드
-	private double Order_point;//적립포인트
-	private String Order_name;//주문상품이름
 
 	public int getOrder_code() {
 		return Order_code;
@@ -66,29 +63,5 @@ public class OrderBean {
 
 	public void setOrder_result(String order_result) {
 		Order_result = order_result;
-	}
-
-	public int getOrder_num() {
-		return Order_num;
-	}
-
-	public void setOrder_num(int order_num) {
-		Order_num = order_num;
-	}
-
-	public double getOrder_point() {
-		return Order_point;
-	}
-
-	public void setOrder_point(double order_point) {
-		Order_point = order_point;
-	}
-
-	public String getOrder_name() {
-		return Order_name;
-	}
-
-	public void setOrder_name(String order_name) {
-		Order_name = order_name;
 	}
 }

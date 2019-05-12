@@ -206,6 +206,7 @@ public class ProductDAO {
 	            ProductBean productbean = new ProductBean();
 	            
 	            String date = String.valueOf(re.getTimestamp("product_date"));
+	            
 	            productbean.setProduct_code(re.getInt("product_code"));
 	            productbean.setProduct_category(re.getString("product_category"));
 	            productbean.setProduct_name(re.getString("product_name"));

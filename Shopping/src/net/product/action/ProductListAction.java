@@ -15,8 +15,6 @@ public class ProductListAction implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		HttpSession session = request.getSession();
 		ProductDAO productdao = new ProductDAO();
-		
-		
 		if(productdao.getListProduct() == null) {
 			PrintWriter out = response.getWriter();
 			out.println("<script>");

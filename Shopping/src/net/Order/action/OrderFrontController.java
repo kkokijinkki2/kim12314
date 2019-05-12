@@ -35,25 +35,9 @@ public class OrderFrontController extends HttpServlet implements javax.servlet.S
 			forward.setRedirect(false);
 			forward.setPath("./product/Product_add.jsp");
 		}
-		//사용자가 주문한 상품 디비에 담기
-		else if(command.equals("/OrderAddAction.oo")) {
-			action = new OrderAddAction();
-			try {
-				forward = action.execute(request, response);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
 
-		}
-		else if(command.equals("/OrderListAction.oo")) {
-			action = new OrderListAction();
-			try {
-				forward = action.execute(request, response);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-
-		}
+		
+		
 		if(forward.isRedirect()){
 			System.out.println("for " + forward.getPath());
 			response.sendRedirect(forward.getPath());
@@ -64,7 +48,6 @@ public class OrderFrontController extends HttpServlet implements javax.servlet.S
 			dispatcher.forward(request, response);
 			return;
 		}
-		
 
 	}
 	 
