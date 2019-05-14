@@ -40,7 +40,7 @@
       <ul>
        <li><a href="aboutmaxim.jsp">ABOUT MAXIM</a></li>
        
-         <li><a href="#">MEDIA</a></li>
+         <li><a href="media.jsp">MEDIA</a></li>
          
                   <li><a href="NewsListAction.ne">NOTICE</a></li>
          
@@ -56,11 +56,9 @@
          
          <li><a href="#">CUSTOMER</a>
          <ul><%if(session.getAttribute("id")!=null) {%>
-         
-         <li><a href="www.daum.net">CART</a></li>
+         <li><a href="Shop_basket.jsp">CART</a></li>
          <li><a href="#">ORDER</a></li>
          <li><a href="#">MYSHOPPING</a></li>
-         
         
    <%}else{ %>   
        <li><a href="MemberLoginForm.mo">LOGIN</a></li>
