@@ -1,14 +1,12 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<%@ page import = "net.product.db.ProductBean" %>
-       <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="net.product.db.ProductBean"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-
 <title>상품목록</title>
 <style type="text/css">
 img {
@@ -34,7 +32,6 @@ a {
 	font-size: 25pt;
 	color: #000000;
 }
-
 </style>
 
 <script
@@ -45,6 +42,11 @@ a {
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+
+
+
+
 
 
 	<jsp:useBean id="now" class="java.util.Date" />
@@ -117,27 +119,6 @@ a {
 	<!-- 
 valign=top style="font-family: 돋음; font-size: 12" id="deteail"
  -->
-
-		<div><jsp:include page="/NewFile.jsp" flush="false"></jsp:include></div>
-	 
-		<div><jsp:include page="/bottom1.jsp" flush="false"></jsp:include></div>
-		<div><jsp:include page="/bottom.jsp" flush="false"></jsp:include></div>
-		
-
-
-	<tr>
-		<td>수량</td><td colspan="3">&nbsp;:&nbsp;<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_count() %></td>
-		<td>상품등록일</td>
-		<td>
-			<input type="text" name="date" id="date" value="${date}" readonly>
-		</td>
-	</tr>
-	<tr align="center">
-		<td><input type="submit" value="수정" ></td>
-	</tr>
-</table>
-</form>
-<a href ="ProductList.po"><button>목록</button></a>
 
 </body>
 </html>

@@ -13,8 +13,8 @@
   <servlet>
     <servlet-name>MemberFrontController</servlet-name>
     <servlet-class>
-			net.member.action.MemberFrontController
-	</servlet-class>
+         net.member.action.MemberFrontController
+   </servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>MemberFrontController</servlet-name>
@@ -23,8 +23,8 @@
   <servlet>
     <servlet-name>BoardFrontController</servlet-name>
     <servlet-class>
-			net.board.action.BoardFrontController
-	</servlet-class>
+         net.board.action.BoardFrontController
+   </servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BoardFrontController</servlet-name>
@@ -33,8 +33,8 @@
   <servlet>
     <servlet-name>ProductFrontController</servlet-name>
     <servlet-class>
-			net.product.action.ProductFrontController
-	</servlet-class>
+         net.product.action.ProductFrontController
+   </servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ProductFrontController</servlet-name>
@@ -43,8 +43,8 @@
   <servlet>
     <servlet-name>NewsFrontController</servlet-name>
     <servlet-class>
-			net.news.action.NewsFrontController
-	</servlet-class>
+         net.news.action.NewsFrontController
+   </servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>NewsFrontController</servlet-name>
@@ -53,8 +53,8 @@
   <servlet>
     <servlet-name>ReviewFrontController</servlet-name>
     <servlet-class>
-			net.review.action.ReviewFrontController
-	</servlet-class>
+         net.review.action.ReviewFrontController
+   </servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ReviewFrontController</servlet-name>
@@ -63,8 +63,8 @@
   <servlet>
     <servlet-name>OrderFrontController</servlet-name>
     <servlet-class>
-			net.Order.action.OrderFrontController
-	</servlet-class>
+         net.Order.action.OrderFrontController
+   </servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>OrderFrontController</servlet-name>
