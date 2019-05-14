@@ -108,7 +108,6 @@ public class ProductDAO {
 	}
 	
 	//상품상세정보용
-
 	public ProductBean detailProduct(int code) throws SQLException{
 		String sql = "select * from product where product_code = ?";
 		try {
@@ -224,9 +223,29 @@ public class ProductDAO {
 	   }
 
 	
-	//상품 검색 코드용 
-	public String researchProduct(int code) {
-		return "x";
+	//상품카테고리 검색
+	public List getCategory() throws SQLException{
+		String sql = "select DISTINCT product_category from product";
+		 List list = new ArrayList();
+	      
+	      try {
+	         pt = conn.prepareStatement(sql);
+	         re = pt.executeQuery();
+	         while(re.next()) {
+	        	 list.add(re.getString("product_category"));
+	         }
+	         return list;
+	      }catch(RuntimeException er) {
+	         er.printStackTrace();
+	      }finally {
+	         try {
+	        	if(re!=null) {re.close(); re = null; }
+	            if(pt!=null) {pt.close(); pt = null; }
+	         }catch(Exception e) {
+	            e.printStackTrace();
+	         }
+	      }
+	      return null;
 	}
 	
 	//상품 삭제

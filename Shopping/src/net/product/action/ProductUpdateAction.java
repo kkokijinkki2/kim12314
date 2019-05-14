@@ -17,7 +17,6 @@ public class ProductUpdateAction implements Action{
 		ProductBean productbean = new ProductBean();
 		
 		productbean.setProduct_code(Integer.parseInt(request.getParameter("code")));
-		System.out.println(Integer.parseInt(request.getParameter("code")));
 		productbean.setProduct_category(request.getParameter("category"));
 		productbean.setProduct_name(request.getParameter("name"));
 		productbean.setProduct_count(Integer.parseInt(request.getParameter("count")));

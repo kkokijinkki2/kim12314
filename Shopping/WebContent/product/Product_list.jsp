@@ -32,13 +32,22 @@ table.style_Table td {
 		<div><jsp:include page="/header.jsp"></jsp:include></div>
 <%
 	List<ProductBean> beans = (List<ProductBean>)session.getAttribute("productbean");
+	List cate = (List)session.getAttribute("productcate");
 %>
 <br><br><br><br><br><br>
+<div>
+	<select>
+	<%for(ProductBean bean : beans){ %>
+		<option><%=%></option>
+	<%} %>
+	</select>
+
+</div>
 <div style="font-size:30pt;font-weight: bold" align="center">상품 목록</div>
 <br><br>
 <table class="style_Table" border="0"align="center">
 
-	<tr align="center" style=font-size:17pt ;>
+	<tr align="center" style=font-size:17pt;>
 		<td></td>
 		<td>코드</td>
 		<td>상품이름</td>

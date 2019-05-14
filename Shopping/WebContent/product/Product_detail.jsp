@@ -46,13 +46,13 @@ a {
 </head>
 <body>
 
-
+	<div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
 	<jsp:useBean id="now" class="java.util.Date" />
 	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date" />
-	<img style="
-	width: 360px; height: 360px;" src="<%=((ProductBean) session.getAttribute("detailProduct")).getProduct_image()%>" />
-	
+	<img style="width: 360px; height: 360px;" src="<%=((ProductBean) session.getAttribute("detailProduct")).getProduct_image()%>" />
+	<form method = "post" action="ProdcutUpdateView.po">
 	<table>
+	
 		<tr>
 			<th colspan="2">상품등록</th>
 		<tr>
@@ -107,16 +107,12 @@ a {
 			<td>&emsp; ${date } &emsp;</td>
 		</tr>
 
-
-
 	</table>
 	<br>
 	<br>
-	<a href="ProductUpdateView.po">수정</a> &emsp; &emsp;
+	<a href="ProductUpdateView.po?code=<%=((ProductBean) session.getAttribute("detailProduct")).getProduct_code()%>">수정</a> &emsp; &emsp;
 	<a href="ProductList.po">목록</a>
-	<!-- 
-valign=top style="font-family: 돋음; font-size: 12" id="deteail"
- -->
+	
 
 		<div><jsp:include page="/NewFile.jsp" flush="false"></jsp:include></div>
 	 
@@ -132,12 +128,7 @@ valign=top style="font-family: 돋음; font-size: 12" id="deteail"
 			<input type="text" name="date" id="date" value="${date}" readonly>
 		</td>
 	</tr>
-	<tr align="center">
-		<td><input type="submit" value="수정" ></td>
-	</tr>
 </table>
 </form>
-<a href ="ProductList.po"><button>목록</button></a>
-
 </body>
 </html>

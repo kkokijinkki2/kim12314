@@ -15,7 +15,20 @@
       <%if(session.getAttribute("id").equals("admin")){ %>
          <a href="AdminPage.mo">ADMINPAGE</a>
       <%}%>   
-         <a href="MemberLogoutAction.mo">LOGOUT</a>
+         <a id="logout">LOGOUT</a>
+         <script type="text/javascript">
+         	$(document).ready(function(){
+         		$("#logout").click(function(){
+         			var result = confirm("Are you sure you want to do this?");
+         			
+         			if(result){
+         				 document.getElementById("logout").href = "MemberLogoutAction.mo";
+         			}else{
+         				
+         			}
+         		});
+         	});
+         </script>
          
    <%}else{ %>   
          <a href="MemberLoginForm.mo">LOGIN</a>
@@ -30,11 +43,6 @@
 			height="70px"></a>
 	</div>
 
-
-
-
-   
-
    <div class="menubar">
 
 
@@ -43,7 +51,7 @@
        
          <li><a href="#">MEDIA</a></li>
          
-                  <li><a href="NewsListAction.ne">NOTICE</a></li>
+                  <li><a href="NewsListAction.ne">NOTICE (only member)</a></li>
          
          <li><a href="#" id="current">PRODUCT</a>
             <ul>
