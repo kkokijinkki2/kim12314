@@ -144,6 +144,7 @@ body {
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
 	<!-- 배너사진 -->
 	<div class="banner">
 		<div id="slider">

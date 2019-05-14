@@ -14,12 +14,11 @@ import net.product.db.ProductDAO;
 public class ProductModifyView implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		ProductDAO productdao = new ProductDAO();
-		HttpSession session = request.getSession();
 		
-		session.setAttribute("image", request.getParameter("image"));
+		String image =request.getParameter("image"); 
 		ActionForward forward = new ActionForward();
-		forward.setRedirect(true);
-		forward.setPath("ProductModify.po");		
+		forward.setRedirect(false);
+		forward.setPath("ProductModify.po?image="+image);		
 		productdao.conClose();
 		return forward;
 		
