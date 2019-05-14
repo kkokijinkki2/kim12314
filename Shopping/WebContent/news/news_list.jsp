@@ -120,8 +120,7 @@
 				</tr>
 			<tr align="right">		
 			<td colspan="5">
-<a href="NewsWrite.ne">	 <img
-							class="btnImage" src="image/write.PNG">
+<a href="NewsWrite.ne">	 <img class="btnImage" src="image/write.PNG">
 					</a>
 	</td>
 				</tr>

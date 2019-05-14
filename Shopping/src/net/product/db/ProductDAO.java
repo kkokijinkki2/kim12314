@@ -69,8 +69,7 @@ public class ProductDAO {
 	
 	//상품 수정
 	public boolean updateProduct(ProductBean productbean) throws SQLException {
-		String sql = "update product "
-				+ "A set"
+		String sql = "update product set"
 					+ "product_category = ?,"
 					+ "product_name = ?,"
 					+ "product_count = ?,"

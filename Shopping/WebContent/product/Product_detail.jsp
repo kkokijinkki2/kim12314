@@ -42,7 +42,7 @@
 		<div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
 	
 
-		<div><jsp:include page="NewFile.jsp" flush="false"></jsp:include></div>
+		<div><jsp:include page="/NewFile.jsp" flush="false"></jsp:include></div>
 	 
 		<div><jsp:include page="/bottom1.jsp" flush="false"></jsp:include></div>
 		<div><jsp:include page="/bottom.jsp" flush="false"></jsp:include></div>

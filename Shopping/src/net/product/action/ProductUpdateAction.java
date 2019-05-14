@@ -17,6 +17,7 @@ public class ProductUpdateAction implements Action{
 		ProductBean productbean = new ProductBean();
 		
 		productbean.setProduct_code(Integer.parseInt(request.getParameter("code")));
+		System.out.println(Integer.parseInt(request.getParameter("code")));
 		productbean.setProduct_category(request.getParameter("category"));
 		productbean.setProduct_name(request.getParameter("name"));
 		productbean.setProduct_count(Integer.parseInt(request.getParameter("count")));
@@ -25,7 +26,6 @@ public class ProductUpdateAction implements Action{
 		productbean.setProduct_price(Integer.parseInt(request.getParameter("price")));
 		productbean.setProduct_detail(request.getParameter("detail"));
 		productbean.setProduct_date(request.getParameter("date"));
-		System.out.println(productbean.getProduct_date());
 		
 		if(!productdao.updateProduct(productbean)) {
 			PrintWriter out = response.getWriter();
