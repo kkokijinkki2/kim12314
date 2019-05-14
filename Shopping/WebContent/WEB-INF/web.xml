@@ -1,6 +1,7 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>Shopping</display-name>
+  <display-name>Shopping1</display-name>
   <welcome-file-list>
     <welcome-file>start.jsp</welcome-file>
   </welcome-file-list>
@@ -13,8 +14,8 @@
   <servlet>
     <servlet-name>MemberFrontController</servlet-name>
     <servlet-class>
-         net.member.action.MemberFrontController
-   </servlet-class>
+			net.member.action.MemberFrontController
+	</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>MemberFrontController</servlet-name>
@@ -23,8 +24,8 @@
   <servlet>
     <servlet-name>BoardFrontController</servlet-name>
     <servlet-class>
-         net.board.action.BoardFrontController
-   </servlet-class>
+			net.board.action.BoardFrontController
+	</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BoardFrontController</servlet-name>
@@ -33,41 +34,34 @@
   <servlet>
     <servlet-name>ProductFrontController</servlet-name>
     <servlet-class>
-         net.product.action.ProductFrontController
-   </servlet-class>
+			net.product.action.ProductFrontController
+	</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ProductFrontController</servlet-name>
     <url-pattern>*.po</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>NewsFrontController</servlet-name>
-    <servlet-class>
-         net.news.action.NewsFrontController
-   </servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>NewsFrontController</servlet-name>
-    <url-pattern>*.ne</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>ReviewFrontController</servlet-name>
-    <servlet-class>
-         net.review.action.ReviewFrontController
-   </servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ReviewFrontController</servlet-name>
-    <url-pattern>*.re</url-pattern>
-  </servlet-mapping>
+  
   <servlet>
     <servlet-name>OrderFrontController</servlet-name>
     <servlet-class>
-         net.Order.action.OrderFrontController
-   </servlet-class>
+			net.Order.action.OrderFrontController
+	</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>OrderFrontController</servlet-name>
     <url-pattern>*.oo</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DeliveryFrontController</servlet-name>
+    <servlet-class>
+			net.Delivery.action.DeliveryFrontController
+	</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeliveryFrontController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -40,6 +40,7 @@ public class ProductDAO {
 		String sql = "insert into product values(sqe_code.nextval,?,?,?,?,?,?,?,?)";
 		java.sql.Timestamp date = java.sql.Timestamp.valueOf(productbean.getProduct_date());
 		try {
+			
 			pt = conn.prepareStatement(sql);
 		
 			pt.setString(1, productbean.getProduct_category());

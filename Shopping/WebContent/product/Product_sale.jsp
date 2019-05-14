@@ -1,3 +1,7 @@
+﻿
+<%@page import="net.member.db.MemberBean"%>
+<%@page import="java.lang.reflect.Member"%>
+<%@page import="com.sun.xml.internal.txw2.Document"%>
 
 <%@page import="java.util.List"%>
 <%@page import="net.product.db.*"%>
@@ -6,6 +10,8 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%request.setCharacterEncoding("UTF-8"); %>
 <%
 
@@ -26,14 +32,17 @@
   					var x= parseInt(document.getElementById("Order_count").value);  
   					var y ="<%=cost%>"; 
   					document.getElementById("demo").innerHTML ="합계:"+(x*y);
+  					document.getElementById("count").value=x;
+  					document.getElementById("price").value=x*y;
   					
   					var point= parseInt(document.getElementById("Order_count").value);  
   					var y ="<%=cost%>"; 
-  					document.getElementById("point").innerHTML ="적립포인트:"+(x*y)/1000;
-  				 	
+  					document.getElementById("pointgo").innerHTML ="적립포인트:"+(x*y)/1000;
+  					document.getElementById("point").value=(x*y)/1000;
 					}
 	</script>
-
+<jsp:useBean id="now" class="java.util.Date" />
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date"/>
 </head>
 
 <style type="text/css">
@@ -70,11 +79,23 @@
 <body onload = "myFunction()">
 
 <center>
-	<div class="aa" style="color: black;">각임?</div>
- 	
+
+	<div class="aa" style="color: black;">상품을 구매하세요.</div>
+<form action="OrderAddAction.oo" method="post"> 	
  	<table border=1 >
  	<tr> 
-   		<td colspan="4"><%=bean.getProduct_name() %></td>
+ 		<td colspan="5">
+ 			<input type="hidden" value="${id}" name="id">
+ 			<input type="hidden" value="<%=bean.getProduct_code()%>" name="code">
+ 			<input type="hidden" value="<%=bean.getProduct_image()%>" name="image">
+ 			<input type="hidden" name="date" value="${date}" >
+ 			<input type="hidden" value="<%=bean.getProduct_name() %>" name="name">
+ 			<input type="hidden" id="count" name="count">
+ 			<input type="hidden" value="배송준비중" name="result">
+ 			<input type="hidden" id="price" name="price">
+ 			<input type="hidden" id="point" name="point">
+
+   		상품명: <%=bean.getProduct_name() %></td>
    	</tr>
  
 
@@ -82,14 +103,14 @@
   	<h3>상품이 없습니다.</h3>
   <% }else{%>
 	   	<tr>
-      		<td colspan="4"><img src="<%=bean.getProduct_image()%>"></td>
+      		<td colspan="5"><img src="<%=bean.getProduct_image()%>"></td>
       	</tr>
       	<tr>
       		
       		<td>상품 가 격: <%=cost %></td>
       		<td>개수:
       		
-      			<select id="Order_count" onchange = "myFunction()">
+      			<select id="Order_count" name="count" onchange = "myFunction()">
       				<%for(int i=1;i<=count;i++){ %>
       				<option value="<%=i %>" name="Order_count"> <%=i%></option>
       				<%} %>
@@ -100,11 +121,11 @@
       		<td id="demo">	
       		</td>
       		</td> 
-      		<td id="point">	
+      		<td id="pointgo">	
       		</td>
       		<td>
-      		<a href="장바구니 ㄱㄱ"><button>장바구니에 담기</button></a>
-      		<a href="OrderOrderAction.po"><button>구입 하기</button></a>
+      		
+      		<input type="submit" value="구입하기">
       		</td>
       		
     	  
@@ -113,7 +134,8 @@
 	
 
    <%}%>
-
+</form>
+<a href="OrderBasketAction.oo"><button>장바구니에 담기</button></a>
 </center>
 </body>
 </html>
