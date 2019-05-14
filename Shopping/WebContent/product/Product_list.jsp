@@ -1,5 +1,4 @@
 ﻿
-
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="net.product.db.ProductBean"%>
@@ -48,7 +47,7 @@ table.style_Table td {
 	</tr>
 	<%for(ProductBean bean : beans){ %>
 	<tr align="center" style="font-size:15pt">
-		<td><a href="ProductDetailAction.po?id=<%=bean.getProduct_code() %>">
+		<td><a href="ProductDetailAction.mo?id=<%=bean.getProduct_code() %>">
          <%=bean.getProduct_code() %>
          </a></td>
 		<td><%=bean.getProduct_name() %></td>

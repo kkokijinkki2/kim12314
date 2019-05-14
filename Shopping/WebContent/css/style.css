@@ -1,9 +1,10 @@
+﻿
 ﻿@charset "UTF-8";
 
-
+/* 
 body {
 	align: center;
-}
+} */
 html,body {   height: 100%; margin: 0; padding: 0; }
 
  
@@ -19,7 +20,7 @@ margin-left: 60px;
 
 
 .index img {
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	width: 250px;
@@ -68,7 +69,7 @@ margin-left: 60px;
 	line-height: 50px;
 	margin: 15px;
 	padding: 0px 25px;
-	text-align: center;
+	text-align: left;
 	text-decoration: none;
 }
 
@@ -301,4 +302,3 @@ background-color: silver;
 border-top: 1px solid #adadad;
 
 } */
-
