@@ -122,7 +122,7 @@
       		<td id="pointgo">	
       		</td>
       		<td>
-      		<a href="Order"><button>장바구니에 담기</button></a>
+      		
       		<input type="submit" value="구입하기">
       		</td>
       		
@@ -133,6 +133,7 @@
 
    <%}%>
 </form>
+<a href="OrderBasketAction.oo"><button>장바구니에 담기</button></a>
 </center>
 </body>
 </html>
