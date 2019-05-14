@@ -51,4 +51,16 @@
     <servlet-name>OrderFrontController</servlet-name>
     <url-pattern>*.oo</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DeliveryFrontController</servlet-name>
+    <servlet-class>
+			net.Delivery.action.DeliveryFrontController
+	</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeliveryFrontController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
