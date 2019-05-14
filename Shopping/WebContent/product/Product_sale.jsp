@@ -1,7 +1,6 @@
 ﻿
 <%@page import="net.member.db.MemberBean"%>
 <%@page import="java.lang.reflect.Member"%>
-<%@page import="com.sun.xml.internal.txw2.Document"%>
 
 <%@page import="java.util.List"%>
 <%@page import="net.product.db.*"%>
@@ -91,7 +90,7 @@
  			<input type="hidden" name="date" value="${date}" >
  			<input type="hidden" value="<%=bean.getProduct_name() %>" name="name">
  			<input type="hidden" id="count" name="count">
- 			<input type="hidden" value="배송준비중" name="result">
+ 			<input type="hidden" value="ready to delivery" name="result">
  			<input type="hidden" id="price" name="price">
  			<input type="hidden" id="point" name="point">
 
