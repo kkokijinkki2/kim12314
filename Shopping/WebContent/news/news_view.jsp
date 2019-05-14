@@ -72,7 +72,7 @@
 		<td colspan="5">
 			<font size=4>
 			</a>&nbsp;&nbsp;
-			<a href="./NewsList.ne">[목록]</a>&nbsp;&nbsp;
+			<a href="NewsListAction.ne">[목록]</a>&nbsp;&nbsp;
 			</font>
 		</td>
 	</tr>

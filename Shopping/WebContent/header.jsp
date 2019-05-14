@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,16 +15,26 @@
       <%if(session.getAttribute("id").equals("admin")){ %>
          <a href="AdminPage.mo">ADMINPAGE</a>
       <%}%>   
-         <a href="MemberLogoutAction.mo">LOGOUT</a>
-         <a href="www.daum.net">BASKET</a> 
-         <a href="ProductOrderAction.po">ORDER</a>
+         <a id="logout">LOGOUT</a>
+         <script type="text/javascript">
+         	$(document).ready(function(){
+         		$("#logout").click(function(){
+         			var result = confirm("Are you sure you want to do this?");
+         			
+         			if(result){
+         				 document.getElementById("logout").href = "MemberLogoutAction.mo";
+         			}else{
+         				
+         			}
+         		});
+         	});
+         </script>
+         
    <%}else{ %>   
          <a href="MemberLoginForm.mo">LOGIN</a>
-         <a href="MemberAddView.mo">JOIN</a>   
+           
    <%} %>
-         <a href="www.nate.com">NOTICE</a>
-         <a href="BoardList.bo">Q&A</a> 
-         <a href="www.naver.com">REVIEW</a>   
+         
    </div>
 
 
@@ -31,11 +42,6 @@
 		<a href="main.po"><img src="image/h1Logo.png" width="200px"
 			height="70px"></a>
 	</div>
-
-
-
-
-   
 
    <div class="menubar">
 
@@ -45,7 +51,7 @@
        
          <li><a href="#">MEDIA</a></li>
          
-                  <li><a href="#">NOTICE</a></li>
+                  <li><a href="NewsListAction.ne">NOTICE (only member)</a></li>
          
          <li><a href="#" id="current">PRODUCT</a>
             <ul>
@@ -58,15 +64,23 @@
          </li>
          
          <li><a href="#">CUSTOMER</a>
-         <ul>
-               <li><a href="ProductInfoAction.po?category=ORIGINAL">LOGIN&JOIN</a></li>
-               <li><a href="#">CART</a></li>
-               <li><a href="#">ORDER</a></li>
-               <li><a href="#">MYSHOPPING</a></li>
-               <li><a href="#">Q&A</a></li>
+         <ul><%if(session.getAttribute("id")!=null) {%>
+         
+         <li><a href="www.daum.net">CART</a></li>
+         <li><a href="#">ORDER</a></li>
+         <li><a href="#">MYSHOPPING</a></li>
+         
+        
+   <%}else{ %>   
+       <li><a href="MemberLoginForm.mo">LOGIN</a></li>
+               <li><a href="MemberAddView.mo">JOIN</a></li>
+   <%} %>
+           <li><a href="BoardList.bo">Q&A</a></li>
+          
             </ul>
          </li>
       </ul>
    </div>
 </body>
 </html>
+

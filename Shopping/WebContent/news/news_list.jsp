@@ -20,20 +20,13 @@
 	
 %>
 </head>
-<body>
+<body onload = "check()">
 
 
 	<div id="container">
 
 		<div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
 		<body>
-			<%-- <%
-	if(session.getAttribute("id").equals("admin")){%>
-		<%=session.getAttribute("id")%>님 환영합니다.<br>
-		<a href = "MemberListViewAction.mo">관리자모드 접속(회원 목록보기)</a>
-	<%}else{%>
-		<%=	session.getAttribute("id")%>님 환영합니다.
-	<%} %> --%>
 			<!-- 게시판 리스트 -->
 			<br>
 			<br>
@@ -120,13 +113,15 @@
  %>
 					</td>
 				</tr>
+			<%if(session.getAttribute("id").equals("admin")) {%>	
 			<tr align="right">		
-			<td colspan="5">
-<a href="NewsWrite.ne">	 <img
+				<td colspan="5">
+					<a href="NewsWrite.ne">	 <img
 							class="btnImage" src="image/write.PNG">
 					</a>
-	</td>
-				</tr>
+				</td>
+			</tr>
+			<%}%>
 			</table>
 
 		<div><jsp:include page="/bottom1.jsp" flush="false"></jsp:include></div>

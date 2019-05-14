@@ -39,7 +39,7 @@ public class NewsAddAction implements Action {
 	   		System.out.println("뉴스 등록 완료");
 	   		
 	   		forward.setRedirect(true);
-	   		forward.setPath("./NewsList.ne");
+	   		forward.setPath("./NewsListAction.ne");
 	   		newsdao.conClose();
 	   		return forward;
 	   		

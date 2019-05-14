@@ -21,6 +21,10 @@ import net.action.ActionForward;
 		 String command=RequestURI.substring(contextPath.length());
 		 ActionForward forward=null;
 		 Action action=null;
+		 
+		 	System.out.println(RequestURI);
+			System.out.println(contextPath);
+			System.out.println(command);
 		   
 		   if(command.equals("/NewsWrite.ne")){
 			   forward=new ActionForward();
@@ -47,7 +51,7 @@ import net.action.ActionForward;
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
-		   }*/else if(command.equals("/NewsList.ne")){
+		   }*/else if(command.equals("/NewsListAction.ne")){
 			   action = new NewsListAction();
 			   try{
 				   forward=action.execute(request, response);

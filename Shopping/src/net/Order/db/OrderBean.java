@@ -8,6 +8,25 @@ public class OrderBean {
 	private int Order_price; // 주문 상품가격
 	private int Order_count; // 주문 갯수
 	private String Order_result;// 주문처리상태
+	private double Order_point;//주문 포인트
+	private String Order_name;//주문 상품이름
+	private int Order_num;
+	
+	public double getOrder_point() {
+		return Order_point;
+	}
+
+	public void setOrder_point(double order_point) {
+		Order_point = order_point;
+	}
+
+	public String getOrder_name() {
+		return Order_name;
+	}
+
+	public void setOrder_name(String order_name) {
+		Order_name = order_name;
+	}
 
 	public int getOrder_code() {
 		return Order_code;
@@ -63,5 +82,13 @@ public class OrderBean {
 
 	public void setOrder_result(String order_result) {
 		Order_result = order_result;
+	}
+
+	public int getOrder_num() {
+		return Order_num;
+	}
+
+	public void setOrder_num(int order_num) {
+		Order_num = order_num;
 	}
 }
