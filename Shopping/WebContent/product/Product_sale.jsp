@@ -1,6 +1,8 @@
+﻿
 <%@page import="net.member.db.MemberBean"%>
 <%@page import="java.lang.reflect.Member"%>
 <%@page import="com.sun.xml.internal.txw2.Document"%>
+
 <%@page import="java.util.List"%>
 <%@page import="net.product.db.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

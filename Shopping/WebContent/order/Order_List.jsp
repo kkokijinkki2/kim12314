@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="net.Order.db.*"%>
 <%@page import="java.util.List"%>
@@ -13,6 +13,8 @@
 <meta charset="UTF-8">
 <title>주문확인</title>
 
+<link rel="stylesheet" href="css/style.css" />
+
 <style type="text/css">
 h1 {
    font-size: 3em;
@@ -20,12 +22,12 @@ h1 {
    color: #FFF;
 }
 
-.container {
-   width: 1000px;
-   margin: 10px auto;
-}
+
 
 ul.tabs {
+	position:absolute;
+	top:300px;
+	left:170px;
    margin: 0;
    padding: 0;
    float: left;
@@ -33,7 +35,7 @@ ul.tabs {
    height: 32px;
    border-bottom: 1px solid #999;
    border-left: 1px solid #999;
-   width: 100%;
+   width: 80%;
 }
 
 ul.tabs li {
@@ -70,11 +72,14 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 }
 
 .tab_container {
+	position:absolute;
+	top:333px;
+	left:170px;
    border: 1px solid #999;
    border-top: none;
    clear: both;
    float: left;
-   width: 100%;
+   width: 80%;
    background: #fff;
    -moz-border-radius-bottomright: 5px;
    -khtml-border-radius-bottomright: 5px;
@@ -110,11 +115,13 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 </head>
 </head>
 <body>
-   <div align="center">
-      <b>ORDER</b>
+  
+   <div id="container">
+   <div><jsp:include page="/header.jsp" flush="false"></jsp:include></div>
+		 <div align="center">
+		 <br><br><br><br><br>
+      <font size=15 style="font-weight: bold">ORDER</font>
    </div>
-   <div class="container">
-
 
       <ul class="tabs">
          <li><a href="#Order1">주문내역조회(0)</a></li>
@@ -136,6 +143,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
                <option>반품</option>
 
             </select>&nbsp;
+
             <form method="post" action="OrderCheckAction.oo" onchange="check()">
                <input type="submit" value="오늘" name="check" >
                <input type="submit" value="1주일" name="check" >
@@ -143,6 +151,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
                <input type="submit" value="3개월" name="check">
                <input type="submit" value="6개월" name="check" > 
                <input type="date" name="Firstday" id="ChangeCheck">-
+
                <input type="date" name="Lastday" id="Lastday">
                <input type="submit" value="조회">
             </form>
@@ -233,6 +242,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
       </div>
    </div>
+   </body>
+   </html>
    <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <script type="text/javascript">

@@ -16,7 +16,6 @@ public class ProductModifyView implements Action{
 		ProductDAO productdao = new ProductDAO();
 		
 		String image =request.getParameter("image"); 
-		System.out.println(image);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("ProductModify.po?image="+image);		

@@ -15,7 +15,7 @@
 <body>
 <h2>상품수정</h2>
 <jsp:useBean id="now" class="java.util.Date" />
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date"/>
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="today"/>
 
 <form method="post" action="ProductUpdateAction.po" name = "modifyForm">
 <input type="hidden" name = "image" id = "image" value="<%=request.getParameter("image") %>" readonly/>
@@ -57,7 +57,7 @@
 	<tr>
 		<td>수량</td><td colspan="3"><input type="text" id="count" name="count" value = <%=((ProductBean)session.getAttribute("detailProduct")).getProduct_count() %>></td><td>상품등록일</td>
 		<td>
-			<input type="text" name="date" id="date" value="${date}" readonly>
+			<input type="text" name="date" id="date" value="${today}" readonly>
 		</td>
 	</tr>
 	<tr align="center">

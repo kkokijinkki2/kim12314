@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="net.board.db.*" %>
 <%
 	BoardBean board = (BoardBean)request.getAttribute("boarddata");
@@ -6,48 +6,52 @@
 
 <html>
 <head>
-	<title>MVC 게시판</title>
+
+
+	<title>Q&A Detail</title>
 	<style type="text/css">
-	
-	body{
-      background-image: url("./Sagyou/1313.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-   }
+
 </style>
 </head>
 
 <body>
+
+<div id="container">
+<div><jsp:include page="/header.jsp"></jsp:include></div>
 <!-- 게시판 수정 -->
-<table cellpadding="0" cellspacing="0">
-	<tr align="center" valign="middle">
-		<td colspan="5">MVC 게시판</td>
-	</tr>
+
+<div id="container">
+		<div><jsp:include page="/header.jsp"></jsp:include></div>
+<center><table cellpadding="0" cellspacing="0">
+	<br><br><br><br><br><br><br>
 	
 	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
+		<td style="font-family:돋음; font-size:20" height="16">
 			<div align="center">제 목&nbsp;&nbsp;</div>
 		</td>
 		
-		<td style="font-family:돋음; font-size:12">
+		<td style="font-family:돋음; font-size:20">
 		<%=board.getBOARD_SUBJECT()%>
 		</td>
 	</tr>
 	
 	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;">
+		<td colspan="2" style="height:2px;">
 		</td>
 	</tr>
 	
 	<tr>
-		<td style="font-family:돋음; font-size:12">
+
+		<td style="font-family:돋음; font-size:20">
 			<div align="center">내 용</div>
 		</td>
-		<td style="font-family:돋음; font-size:12">
-			<table border=0 width=490 height=250 style="table-layout:fixed">
+		<td style="font-family:돋음; font-size:20">
+
+			<table border=0 width=900 height=500 style="table-layout:fixed">
+
 				<tr>
-					<td valign=top style="font-family:돋음; font-size:12">
+					<td valign=top style="font-family:돋음; font-size:20">
+
 					<%=board.getBOARD_CONTENT() %>
 					</td>
 				</tr>
@@ -55,10 +59,12 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:돋음; font-size:12">
+
+		<td style="font-family:돋음; font-size:20">
 			<div align="center">첨부파일</div>
 		</td>
-		<td style="font-family:돋음; font-size:12">
+		<td style="font-family:돋음; font-size:20">
+
 		<%if(!(board.getBOARD_FILE()==null)){ %>
 		<a href="./boardupload/<%=board.getBOARD_FILE()%>">
 			<%=board.getBOARD_FILE() %>
@@ -68,13 +74,15 @@
 	</tr>
 	
 	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;"></td>
+		<td colspan="2" style="height:2px;"></td>
 	</tr>
 	<tr><td colspan="2">&nbsp;</td></tr>
 	
 	<tr align="center" valign="middle">
 		<td colspan="5">
-			<font size=2>
+
+			<font size=4>
+
 			<a href="./BoardReplyAction.bo?num=<%=board.getBOARD_NUM() %>">
 			[답변]
 			</a>&nbsp;&nbsp;
@@ -88,7 +96,11 @@
 			</font>
 		</td>
 	</tr>
-</table>
+
+
+</table></center></div>
 <!-- 게시판 수정 -->
+</div>
+
 </body>
 </html>

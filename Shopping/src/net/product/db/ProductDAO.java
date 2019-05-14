@@ -70,8 +70,7 @@ public class ProductDAO {
 	
 	//상품 수정
 	public boolean updateProduct(ProductBean productbean) throws SQLException {
-		String sql = "update product "
-				+ "set"
+		String sql = "update product set"
 					+ "product_category = ?,"
 					+ "product_name = ?,"
 					+ "product_count = ?,"
@@ -82,27 +81,19 @@ public class ProductDAO {
 					+ "product_date = ?"
 				+ "where product_code ="+productbean.getProduct_code();
 		java.sql.Timestamp date = java.sql.Timestamp.valueOf(productbean.getProduct_date());
+		
 		try {
 			pt = conn.prepareStatement(sql);
 			pt.setString(1, productbean.getProduct_category());
-			System.out.println(productbean.getProduct_category());
 			pt.setString(2, productbean.getProduct_name());
-			System.out.println(productbean.getProduct_name());
 			pt.setInt(3, productbean.getProduct_count());
-			System.out.println(productbean.getProduct_count());
 			pt.setString(4, productbean.getProduct_image());
-			System.out.println(productbean.getProduct_image());
 			pt.setInt(5, productbean.getProduct_cost());
-			System.out.println(productbean.getProduct_cost());
 			pt.setInt(6, productbean.getProduct_price());
-			System.out.println(productbean.getProduct_price());
 			pt.setString(7, productbean.getProduct_detail());
-			System.out.println(productbean.getProduct_detail());
 			pt.setTimestamp(8, date);
-			System.out.println(date);
 			
 			pt.executeUpdate();
-			System.out.println("13");
 			return true;
 			
 		}catch(RuntimeException er) {
@@ -118,7 +109,6 @@ public class ProductDAO {
 	}
 	
 	//상품상세정보용
-
 	public ProductBean detailProduct(int code) throws SQLException{
 		String sql = "select * from product where product_code = ?";
 		try {
@@ -219,7 +209,6 @@ public class ProductDAO {
 	            productbean.setProduct_date(date);
 	            list.add(productbean);
 	         }
-	         System.out.println("잘되냐??");
 	         return list;
 	      }catch(RuntimeException er) {
 	         er.printStackTrace();
@@ -235,9 +224,29 @@ public class ProductDAO {
 	   }
 
 	
-	//상품 검색 코드용 
-	public String researchProduct(int code) {
-		return "x";
+	//상품카테고리 검색
+	public List getCategory() throws SQLException{
+		String sql = "select DISTINCT product_category from product";
+		 List list = new ArrayList();
+	      
+	      try {
+	         pt = conn.prepareStatement(sql);
+	         re = pt.executeQuery();
+	         while(re.next()) {
+	        	 list.add(re.getString("product_category"));
+	         }
+	         return list;
+	      }catch(RuntimeException er) {
+	         er.printStackTrace();
+	      }finally {
+	         try {
+	        	if(re!=null) {re.close(); re = null; }
+	            if(pt!=null) {pt.close(); pt = null; }
+	         }catch(Exception e) {
+	            e.printStackTrace();
+	         }
+	      }
+	      return null;
 	}
 	
 	//상품 삭제

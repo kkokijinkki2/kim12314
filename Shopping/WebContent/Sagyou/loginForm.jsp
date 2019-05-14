@@ -153,8 +153,7 @@ Button {
 				loginButton: {color: "green", type: 3, height: 60} 
 			}
 		);
-	
-		
+
 		naverLogin.init();
 </script>
 </body>
