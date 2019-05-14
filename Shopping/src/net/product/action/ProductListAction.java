@@ -15,6 +15,7 @@ public class ProductListAction implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		HttpSession session = request.getSession();
 		ProductDAO productdao = new ProductDAO();
+		
 		if(productdao.getListProduct() == null) {
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
@@ -23,6 +24,7 @@ public class ProductListAction implements Action{
 			out.close();
 			return null;
 		}
+		session.setAttribute("productcate", productdao.getCategory());
 		session.setAttribute("productbean", productdao.getListProduct());
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);

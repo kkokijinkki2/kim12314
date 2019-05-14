@@ -30,11 +30,49 @@ public class OrderFrontController extends HttpServlet implements javax.servlet.S
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
-		}else if(command.equals("/ProductAddForm.po")) {
-			forward=new ActionForward();
-			forward.setRedirect(false);
-			forward.setPath("./product/Product_add.jsp");
+		}else if(command.equals("/OrderAddAction.oo")) {
+			action = new OrderAddAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/OrderListAction.oo")) {
+			action = new OrderListAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/OrderCheckAction.oo")) {
+			action = new OrderCheckAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/OrderDeleteAction.oo")) {
+			action = new OrderDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/OrderRecallAction.oo")) {
+			action = new OrderDeleteAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
+		
+		
+//		else if(command.equals("OrderListAction.oo")) {
+//			forward=new ActionForward();
+//			forward.setRedirect(false);
+//			forward.setPath("./order/Order_add.jsp");
+//		}
 
 		
 		

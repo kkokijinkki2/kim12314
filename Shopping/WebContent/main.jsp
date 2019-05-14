@@ -23,7 +23,6 @@
 		<div><jsp:include page="board_1.jsp" flush="false"></jsp:include></div>
 
 		<div><jsp:include page="best.jsp" flush="false"></jsp:include></div>
-	 
 		<div><jsp:include page="bottom1.jsp" flush="false"></jsp:include></div>
 		<div><jsp:include page="bottom.jsp" flush="false"></jsp:include></div>
 			
