@@ -1,3 +1,4 @@
+﻿
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -143,6 +144,7 @@ body {
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
 	<!-- 배너사진 -->
 	<div class="banner">
 		<div id="slider">
@@ -173,6 +175,5 @@ body {
 				</div>
 				
 			</div>
-		</div>
 		</div>
 </body>

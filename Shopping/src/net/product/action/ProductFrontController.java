@@ -23,7 +23,7 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 		System.out.println(contextPath);
 		System.out.println(command);
 		
-		if(command.equals("/product/ProductAddAction.po")) {
+		if(command.equals("/ProductAddAction.po")) {
 			action = new ProductAddAction();
 			try {
 				forward = action.execute(request, response);
@@ -39,9 +39,12 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 			forward.setRedirect(false);
 			forward.setPath("./Product_add.jsp");
 		}else if(command.equals("/main.po")) {
-			forward=new ActionForward();
-			forward.setRedirect(false);
-			forward.setPath("main.jsp");
+			action = new MainAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}else if(command.equals("/ProductOrder.po")) {
 			forward=new ActionForward();
 			forward.setRedirect(false);
@@ -101,7 +104,7 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 			      e.printStackTrace();
 			  }
 		}else if(command.equals("/ProductDeleteAction.po")) {
-			action = new ProductDeleteAction();
+			action = new reserveProductDeleteAction();
 			try {
 				forward = action.execute(request, response);
 			}catch(Exception e) {
@@ -118,6 +121,36 @@ public class ProductFrontController extends HttpServlet implements javax.servlet
 			forward=new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./product/Product_sale.jsp");
+		}else if(command.equals("/image.po")) {
+			forward=new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./product/image.jsp");
+		}else if(command.equals("/imageAdd.po")) {
+			forward=new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./product/imageAdd.jsp");
+		}else if(command.equals("/imageDetail.po")) {
+			forward=new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./product/imageDetail.jsp");
+		}else if(command.equals("/ProductModify.po")) {
+			forward=new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("./product/Product_modify.jsp");
+		}else if(command.equals("/ProductModifyView.po")) {
+			action = new ProductModifyView();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/ProductCatelistAction.po")) {
+			action = new ProductCatelistAction();
+			try {
+				forward = action.execute(request, response);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 		

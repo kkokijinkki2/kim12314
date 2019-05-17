@@ -54,8 +54,7 @@
  <center>
    <table border=1 >
       <tr><td class="b" colspan=3>Product List</td></tr>
- 
-
+      
   <%if(session.getAttribute("infoproduct") == null){ %>
   	<h3>상품이 없습니다.</h3>
   <% }else{%>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"%>
+Ôªø<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="net.board.db.*" %>
 <%
 	BoardBean board = (BoardBean)request.getAttribute("boarddata");
@@ -6,48 +6,52 @@
 
 <html>
 <head>
-	<title>MVC ∞‘Ω√∆«</title>
+
+
+	<title>Q&A Detail</title>
 	<style type="text/css">
-	
-	body{
-      background-image: url("./Sagyou/1313.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-   }
+
 </style>
 </head>
 
 <body>
-<!-- ∞‘Ω√∆« ºˆ¡§ -->
-<table cellpadding="0" cellspacing="0">
-	<tr align="center" valign="middle">
-		<td colspan="5">MVC ∞‘Ω√∆«</td>
-	</tr>
+
+<div id="container">
+<div><jsp:include page="/header.jsp"></jsp:include></div>
+<!-- Í≤åÏãúÌåê ÏàòÏ†ï -->
+
+<div id="container">
+		<div><jsp:include page="/header.jsp"></jsp:include></div>
+<center><table cellpadding="0" cellspacing="0">
+	<br><br><br><br><br><br><br>
 	
 	<tr>
-		<td style="font-family:µ∏¿Ω; font-size:12" height="16">
-			<div align="center">¡¶ ∏Ò&nbsp;&nbsp;</div>
+		<td style="font-family:ÎèãÏùå; font-size:20" height="16">
+			<div align="center">Ï†ú Î™©&nbsp;&nbsp;</div>
 		</td>
 		
-		<td style="font-family:µ∏¿Ω; font-size:12">
+		<td style="font-family:ÎèãÏùå; font-size:20">
 		<%=board.getBOARD_SUBJECT()%>
 		</td>
 	</tr>
 	
 	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;">
+		<td colspan="2" style="height:2px;">
 		</td>
 	</tr>
 	
 	<tr>
-		<td style="font-family:µ∏¿Ω; font-size:12">
-			<div align="center">≥ª øÎ</div>
+
+		<td style="font-family:ÎèãÏùå; font-size:20">
+			<div align="center">ÎÇ¥ Ïö©</div>
 		</td>
-		<td style="font-family:µ∏¿Ω; font-size:12">
-			<table border=0 width=490 height=250 style="table-layout:fixed">
+		<td style="font-family:ÎèãÏùå; font-size:20">
+
+			<table border=0 width=900 height=500 style="table-layout:fixed">
+
 				<tr>
-					<td valign=top style="font-family:µ∏¿Ω; font-size:12">
+					<td valign=top style="font-family:ÎèãÏùå; font-size:20">
+
 					<%=board.getBOARD_CONTENT() %>
 					</td>
 				</tr>
@@ -55,10 +59,12 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ∏¿Ω; font-size:12">
-			<div align="center">√∑∫Œ∆ƒ¿œ</div>
+
+		<td style="font-family:ÎèãÏùå; font-size:20">
+			<div align="center">Ï≤®Î∂ÄÌååÏùº</div>
 		</td>
-		<td style="font-family:µ∏¿Ω; font-size:12">
+		<td style="font-family:ÎèãÏùå; font-size:20">
+
 		<%if(!(board.getBOARD_FILE()==null)){ %>
 		<a href="./boardupload/<%=board.getBOARD_FILE()%>">
 			<%=board.getBOARD_FILE() %>
@@ -68,27 +74,33 @@
 	</tr>
 	
 	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;"></td>
+		<td colspan="2" style="height:2px;"></td>
 	</tr>
 	<tr><td colspan="2">&nbsp;</td></tr>
 	
 	<tr align="center" valign="middle">
 		<td colspan="5">
-			<font size=2>
+
+			<font size=4>
+
 			<a href="./BoardReplyAction.bo?num=<%=board.getBOARD_NUM() %>">
-			[¥‰∫Ø]
+			[ÎãµÎ≥Ä]
 			</a>&nbsp;&nbsp;
 			<a href="./BoardModify.bo?num=<%=board.getBOARD_NUM() %>">
-			[ºˆ¡§]
+			[ÏàòÏ†ï]
 			</a>&nbsp;&nbsp;
 			<a href="./BoardDelete.bo?num=<%=board.getBOARD_NUM() %>">
-			[ªË¡¶]
+			[ÏÇ≠Ï†ú]
 			</a>&nbsp;&nbsp;
-			<a href="./BoardList.bo">[∏Ò∑œ]</a>&nbsp;&nbsp;
+			<a href="./BoardList.bo">[Î™©Î°ù]</a>&nbsp;&nbsp;
 			</font>
 		</td>
 	</tr>
-</table>
-<!-- ∞‘Ω√∆« ºˆ¡§ -->
+
+
+</table></center></div>
+<!-- Í≤åÏãúÌåê ÏàòÏ†ï -->
+</div>
+
 </body>
 </html>

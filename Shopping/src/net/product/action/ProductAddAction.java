@@ -20,8 +20,6 @@ public class ProductAddAction implements Action{
 		productbean.setProduct_name(request.getParameter("name"));
 		productbean.setProduct_count(Integer.parseInt(request.getParameter("count")));
 		productbean.setProduct_image(request.getParameter("image"));
-		System.out.println(Integer.parseInt(request.getParameter("cost")));
-		System.out.println(Integer.parseInt(request.getParameter("price")));
 		productbean.setProduct_cost(Integer.parseInt(request.getParameter("cost")));
 		productbean.setProduct_price(Integer.parseInt(request.getParameter("price")));
 		productbean.setProduct_detail(request.getParameter("detail"));

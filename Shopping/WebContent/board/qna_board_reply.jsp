@@ -14,16 +14,16 @@
 	</script>
 	<style type="text/css">
 	
-	body{
-      background-image: url("./Sagyou/1313.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-   }
+
 </style>
 </head>
 <body>
 <!-- °Ô½ÃÆÇ ´äº¯ -->
+<div id="container">
+		<div><jsp:include page="/header.jsp"></jsp:include></div>
+
+<center>
+
 <form action="./BoardReplyView.bo" method="post" name="boardform">
 <input type="hidden" name="BOARD_NUM" value="<%=board.getBOARD_NUM() %>">
 <input type="hidden" name="BOARD_RE_REF" value="<%=board.getBOARD_RE_REF() %>">
@@ -32,10 +32,10 @@
 
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
-		<td colspan="5">MVC °Ô½ÃÆÇ</td>
+		<td colspan="5">Q&A reply</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12" height="16">
+		<td style="font-family:µ¸À½; font-size:20" height="16">
 			<div align="center">±Û¾´ÀÌ</div>
 		</td>
 		<td>
@@ -44,7 +44,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12" height="16">
+		<td style="font-family:µ¸À½; font-size:20" height="16">
 			<div align="center">Á¦ ¸ñ</div>
 		</td>
 		<td>
@@ -53,7 +53,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12">
+		<td style="font-family:µ¸À½; font-size:20">
 			<div align="center">³» ¿ë</div>
 		</td>
 		<td>
@@ -61,7 +61,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="font-family:µ¸À½; font-size:12">
+		<td style="font-family:µ¸À½; font-size:20">
 			<div align="center">ºñ¹Ð¹øÈ£</div>
 		</td>
 		<td>
@@ -82,7 +82,7 @@
 		</td>
 	</tr>
 </table>
-</form>
+</form></center>
 <!-- °Ô½ÃÆÇ ´äº¯ -->
 </body>
 </html>

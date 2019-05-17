@@ -18,35 +18,31 @@ public class ProductInfoAction implements Action{
       ProductDAO productdao = new ProductDAO();
       String category=request.getParameter("category");
       
-      if(session.getAttribute("id").equals(null)) {
+      if(session.getAttribute("id") == null) {
     	  PrintWriter out = response.getWriter();
           out.println("<script>");
-          out.println("alert('Somethig is wrong')");
+          out.println("alert('You have to login then you can')");
           out.println("location.href = 'MemberLoginForm.mo'");
           out.print("</script>");
           out.close();
           return null;
-      }
-      if(productdao.researchProduct(category) == null) {
-         PrintWriter out = response.getWriter();
-         out.println("<script>");
-         out.println("alert('Somethig is wrong')");
-         out.print("</script>");
-         out.close();
-         return null;
-      }
-      session.setAttribute("infoproduct", productdao.researchProduct(category));
-      List<ProductBean> beans = (List<ProductBean>)session.getAttribute("infoproduct"); 
-      for(ProductBean bean: beans) {
-         System.out.println(bean.getProduct_category());
-      
-      }
-   
-      ActionForward forward = new ActionForward();
-      forward.setRedirect(false);
-      forward.setPath("product/Product_ORIGINAL.jsp");
-      productdao.conClose();
-      return forward;
-      
+      }else {
+    	  if(productdao.researchProduct(category) == null) {
+    		  PrintWriter out = response.getWriter();
+    	      out.println("<script>");
+    	      out.println("alert('Somethig is wrong')");
+    	      out.print("</script>");
+    	      out.close();
+    	      return null;
+    	  }
+    	  session.setAttribute("infoproduct", productdao.researchProduct(category));
+    	  List<ProductBean> beans = (List<ProductBean>)session.getAttribute("infoproduct"); 
+    	   
+    	  ActionForward forward = new ActionForward();
+    	  forward.setRedirect(false);
+    	  forward.setPath("product/Product_ORIGINAL.jsp");
+    	  productdao.conClose();
+    	  return forward;
+      } 
    }
 }

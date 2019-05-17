@@ -15,7 +15,6 @@ public class ProductListAction implements Action{
 	public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		HttpSession session = request.getSession();
 		ProductDAO productdao = new ProductDAO();
-		request.setCharacterEncoding("UTF-8");
 		
 		if(productdao.getListProduct() == null) {
 			PrintWriter out = response.getWriter();
@@ -26,10 +25,11 @@ public class ProductListAction implements Action{
 			return null;
 		}
 		
+		session.setAttribute("productcate", productdao.getCategory());
 		session.setAttribute("productbean", productdao.getListProduct());
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./product/Product_list.jsp");
+		forward.setPath("./product/Product_list.jsp?cate=All");
 		productdao.conClose();
 		return forward;
 		

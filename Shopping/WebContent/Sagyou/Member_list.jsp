@@ -1,13 +1,11 @@
 <%@page import="java.util.List"%>
-
-<%@page import="net.member.db.*"%>
+<%@page import="net.member.db.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="javax.sql.*" %>
-<%@ page import="javax.naming.*" %>
+	pageEncoding="euc-kr"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.sql.*"%>
+<%@ page import="javax.naming.*"%>
 <%request.setCharacterEncoding("UTF-8"); %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +23,11 @@ td {
 }
 
 .aa {
-	font-size: 20pt;
+	font-size: 15pt;
 }
 
 .b {
-	font-size: 25pt;
+	font-size: 20pt;
 }
 
 
@@ -56,7 +54,7 @@ table.style_Table td {
 	<div id="container">
 		<div><jsp:include page="/header.jsp"></jsp:include></div>
 <br><br><br><br><br><br><br>
-	<div style="font-size:40pt; font-weight: bold" align="center">Member List</div>
+	<div style="font-size:30pt; font-weight: bold" align="center">Member List</div>
 		<table class="style_Table" align="center">
 
 			<%List<MemberBean> beans = (List<MemberBean>)session.getAttribute("memberbean");
@@ -72,4 +70,5 @@ table.style_Table td {
 		</table>
 	</div>
 </body>
+
 </html>

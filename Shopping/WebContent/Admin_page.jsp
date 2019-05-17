@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -42,9 +42,6 @@ table {
 				</tr>
 				<tr>
 					<td><a href="Product_list.po"><h2>배송리스트</h2></a></td>
-				</tr>
-				<tr>
-					<td><a href="MemberLogoutAction.mo"><h2>로그아웃</h2></a></td>
 				</tr>
 
 			</table>

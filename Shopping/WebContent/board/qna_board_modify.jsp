@@ -14,22 +14,20 @@
 	</script>
 	<style type="text/css">
 	
-	body{
-      background-image: url("./Sagyou/1313.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      
-   }
+
 </style>
 </head>
 
 <body>
 <!-- 게시판 수정 -->
-<form action="BoardModifyAction.bo" method="post" name="modifyform">
+<div id="container">
+		<div><jsp:include page="/header.jsp"></jsp:include></div>
+		
+<center><form action="BoardModifyAction.bo" method="post" name="modifyform">
 <input type="hidden" name="BOARD_NUM" value=<%=board.getBOARD_NUM() %>>
 <table cellpadding="0" cellspacing="0">
 	<tr align="center" valign="middle">
-		<td colspan="5">MVC 게시판</td>
+		<td colspan="5">Q&A Modify</td>
 	</tr>
 	<tr>
 		<td height="16" style="font-family:돋음; font-size:12">
@@ -84,7 +82,7 @@
 		</td>
 	</tr>
 </table>
-</form>
+</form></center>
 <!-- 게시판 수정 -->
 </body>
 </html>

@@ -37,7 +37,7 @@ public class ProductUpdateAction implements Action{
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(true);
-		forward.setPath("상품등록 페이지");
+		forward.setPath("ProductDetailAction.po?code="+productbean.getProduct_code());
 		productdao.conClose();
 		return forward;
 		

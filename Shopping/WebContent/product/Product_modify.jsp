@@ -7,24 +7,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품목록</title>
+<title>상품수정</title>
 <script type="text/javascript">
-	function preview(){
-		document.getElementById("img").value = document.getElementById("image").value;
-	}
-	
-	function afterview(value){
-		document.getElementById("img").value = value;
-		
-	}
+	//이미지 미리보기 할려고함
 </script>
 </head>
 <body>
-<h2>상품등록</h2>
+<h2>상품수정</h2>
 <jsp:useBean id="now" class="java.util.Date" />
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date"/>
+<fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="today"/>
 
-<form method="post" action="ProductUpdateAction.po" name = "modifyForm" onload = "preview()">
+<form method="post" action="ProductUpdateAction.po" name = "modifyForm">
+<input type="hidden" name = "image" id = "image" value="<%=request.getParameter("image") %>" readonly/>
+
 <table border="1">
 	<tr>
 		<td>상품코드</td><td colspan="5"><input type="text" name="code" id="code" value =<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_code()%> readonly/></td>
@@ -52,17 +47,17 @@
 			</table>
 	</tr>
 	<tr>
-		<td>이미지</td><td colspan="5">
-					<input type="file" oninput = "afterview(<%=request.getParameter("image") %>)" size=40 id="image" name="image" value = "<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_image()%>">
+		<td><a href="imageDetail.po">이미지</a></td>
+		<td colspan="5">
+			현재 사진<img src="<%=((ProductBean)session.getAttribute("detailProduct")).getProduct_image()%>">
+			수정 후 사진<img src="<%=request.getParameter("image") %>">
 			<br><br>
 		</td>
-	<tr>
-		<td><img id="img"/></td>
 	</tr>
 	<tr>
 		<td>수량</td><td colspan="3"><input type="text" id="count" name="count" value = <%=((ProductBean)session.getAttribute("detailProduct")).getProduct_count() %>></td><td>상품등록일</td>
 		<td>
-			<input type="text" name="date" id="date" value="${date }" readonly>
+			<input type="text" name="date" id="date" value="${today}" readonly>
 		</td>
 	</tr>
 	<tr align="center">
