@@ -65,7 +65,7 @@
          
          <li><a href="#">CUSTOMER</a>
          <ul><%if(session.getAttribute("id")!=null) {%>
-         <li><a href="Shop_basket.jsp">CART</a></li>
+         <li><a href="CartListAction.co">CART</a></li>
          <li><a href="#">ORDER</a></li>
          <li><a href="#">MYSHOPPING</a></li>
         

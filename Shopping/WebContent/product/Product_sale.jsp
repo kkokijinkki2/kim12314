@@ -16,7 +16,7 @@
 
 	ProductBean bean = (ProductBean)session.getAttribute("detailOrder"); 
   	int count= bean.getProduct_count();
-  	int cost=bean.getProduct_cost();
+  	int price=bean.getProduct_price();
 
 %>
 
@@ -29,16 +29,24 @@
 					function myFunction() {
   					
   					var x= parseInt(document.getElementById("Order_count").value);  
-  					var y ="<%=cost%>"; 
+  					var y ="<%=price%>"; 
   					document.getElementById("demo").innerHTML ="합계:"+(x*y);
   					document.getElementById("count").value=x;
+  					document.getElementById("count1").value=x;
   					document.getElementById("price").value=x*y;
   					
   					var point= parseInt(document.getElementById("Order_count").value);  
-  					var y ="<%=cost%>"; 
+  					var y ="<%=price%>"; 
   					document.getElementById("pointgo").innerHTML ="적립포인트:"+(x*y)/1000;
   					document.getElementById("point").value=(x*y)/1000;
+  					
+  					r
 					}
+					function goCart() {
+						basketform.submit();
+					}
+				
+					
 	</script>
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate value="${now}" pattern="yyyy-MM-dd HH:mm:ss" var="date"/>
@@ -84,15 +92,17 @@
  	<table border=1 >
  	<tr> 
  		<td colspan="5">
- 			<input type="hidden" value="${id}" name="id">
- 			<input type="hidden" value="<%=bean.getProduct_code()%>" name="code">
- 			<input type="hidden" value="<%=bean.getProduct_image()%>" name="image">
+ 			<input type="hidden" value="${id}" name="id" id="id">
+ 			<input type="hidden" value="<%=bean.getProduct_code()%>" name="code" id="code">
+ 			<input type="hidden" value="<%=bean.getProduct_image()%>" name="image" id="image">
  			<input type="hidden" name="date" value="${date}" >
- 			<input type="hidden" value="<%=bean.getProduct_name() %>" name="name">
- 			<input type="hidden" id="count" name="count">
- 			<input type="hidden" value="ready to delivery" name="result">
- 			<input type="hidden" id="price" name="price">
+ 			<input type="hidden" value="<%=bean.getProduct_name() %>" name="name" id="name">
+ 			<input type="hidden" id="count" name="count" >
+ 			<input type="hidden" value="ready to delivery" name="result" id="result">
+ 			<input type="hidden" id="price" name="price" >
  			<input type="hidden" id="point" name="point">
+ 			<input type="hidden" id="delprice" name="delprice" value="2500">
+ 			
 
    		상품명: <%=bean.getProduct_name() %></td>
    	</tr>
@@ -106,7 +116,7 @@
       	</tr>
       	<tr>
       		
-      		<td>상품 가 격: <%=cost %></td>
+      		<td>상품 가 격: <%=price %></td>
       		<td>개수:
       		
       			<select id="Order_count" name="count" onchange = "myFunction()">
@@ -134,7 +144,16 @@
 
    <%}%>
 </form>
-<a href="OrderBasketAction.oo"><button>장바구니에 담기</button></a>
+<form method="post" action="CartAddAction.co" name="basketform">
+			<input type="hidden" value="${id}" name="id" id="id">
+ 			<input type="hidden" value="<%=bean.getProduct_code()%>" name="code" id="code">
+ 			<input type="hidden" value="<%=bean.getProduct_image()%>" name="image" id="image">
+ 			<input type="hidden" value="<%=bean.getProduct_name() %>" name="name" id="name">
+ 			<input type="hidden" id="count1" name="count">
+ 			<input type="hidden" id="price" name="price" value="<%=bean.getProduct_price() %>">
+ 			<input type="hidden" id="delprice" name="delprice" value="2500">
+</form>
+<a href="javascript:goCart()"><button>장바구니에 담기</button></a>
 </center>
 </body>
 </html>

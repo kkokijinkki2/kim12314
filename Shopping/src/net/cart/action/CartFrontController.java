@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.action.Action;
 import net.action.ActionForward;
 
- public class NewsFrontController 
+ public class CartFrontController 
  	extends javax.servlet.http.HttpServlet 
  	implements javax.servlet.Servlet {
 	 protected void doProcess(HttpServletRequest request, HttpServletResponse response) 
@@ -26,40 +26,30 @@ import net.action.ActionForward;
 			System.out.println(contextPath);
 			System.out.println(command);
 		   
-		   if(command.equals("/NewsWrite.ne")){
-			   forward=new ActionForward();
-			   forward.setRedirect(false);
-			   forward.setPath("./news/news_write.jsp");
-		   }/*else if(command.equals("/BoardModify.bo")){
-			   action = new BoardModifyView();
-			   try{
-				   forward=action.execute(request, response);
-			   }catch(Exception e){
-				   e.printStackTrace();
-			   }
-	 	   }*/else if(command.equals("/NewsAddAction.ne")){
-			   action  = new NewsAddAction();
+		   if(command.equals("/CartAddAction.co")){
+			   action  = new CartAddAction();
 			   try {
 				   forward=action.execute(request, response );
 			   } catch (Exception e) {
 				   e.printStackTrace();
 			   }
-		   }/*else if(command.equals("/BoardModifyAction.bo")){
-			   action = new BoardModifyAction();
-			   try{
-				   forward=action.execute(request, response);
-			   }catch(Exception e){
+			  
+		   }else if(command.equals("/CartListAction.co")){
+			   action  = new CartListAction();
+			   try {
+				   forward=action.execute(request, response );
+			   } catch (Exception e) {
 				   e.printStackTrace();
 			   }
-		   }*/else if(command.equals("/NewsListAction.ne")){
-			   action = new NewsListAction();
+		   }else if(command.equals("/NewsListAction.ne")){
+			   action = new CartListAction();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){
 				   e.printStackTrace();
 			   }
 		   }else if(command.equals("/NewsDetailAction.ne")){
-			   action = new NewsDetailAction();
+			   action = new CartDetailAction();
 			   try{
 				   forward=action.execute(request, response);
 			   }catch(Exception e){

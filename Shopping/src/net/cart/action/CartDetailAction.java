@@ -8,7 +8,7 @@ import net.action.Action;
 import net.action.ActionForward;
 import net.news.db.NewsBean;
 
- public class NewsDetailAction implements Action {
+ public class CartDetailAction implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{ 
 		request.setCharacterEncoding("euc-kr");
    		

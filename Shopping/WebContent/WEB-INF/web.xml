@@ -91,5 +91,15 @@
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>CartFrontController</servlet-name>
+    <servlet-class>
+			net.cart.action.CartFrontController
+	</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartFrontController</servlet-name>
+    <url-pattern>*.co</url-pattern>
+  </servlet-mapping>
   
 </web-app>

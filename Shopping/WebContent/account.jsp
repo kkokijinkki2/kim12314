@@ -10,16 +10,18 @@
 <body>
 	<div id="container">
 		<div><jsp:include page="header.jsp"></jsp:include></div>
+		<br><br><br><br><br><br><br>
 		<form action="MemberAddAction.mo" method="post" name="acount"
 			onsubmit="call()">
 			<input type="hidden" name="date" id="date" value="${today}" readonly />
 			<center>
 
 				<table style="font-size: 20;">
+				
 					<tr>
 						<td colspan="2">
 							<center>
-								<h2>Member Information</h2>
+								<h1>Member Information</h1>
 							</center>
 						</td>
 					</tr>

@@ -31,14 +31,15 @@ table.style_Table td {
 <div id="container">
 		<div><jsp:include page="/header.jsp"></jsp:include></div>
 <%
+	
+	List<String> cates = (List<String>)session.getAttribute("productcate");
 	List<ProductBean> beans = (List<ProductBean>)session.getAttribute("productbean");
-	List cate = (List)session.getAttribute("productcate");
 %>
 <br><br><br><br><br><br>
 <div>
 	<select>
-	<%for(ProductBean bean : beans){ %>
-		<option><%=%></option>
+	<%for(int i=0; i<cates.size(); i++){ %>
+		<option><%=cates.get(i)%></option>
 	<%} %>
 	</select>
 
