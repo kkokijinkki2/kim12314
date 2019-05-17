@@ -1,8 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<%@page import="java.util.List" %>
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +9,6 @@
 <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<%
-	List<String> cates = (List<String>)session.getAttribute("productcate");
-%>
    <div id="header" class="header">
 
    <%if(session.getAttribute("id")!=null) {%>
@@ -60,9 +55,11 @@
          
          <li><a href="#" id="current">PRODUCT</a>
             <ul>
-            <%for(int i=0 ;i<cates.size();i++) {%>
-               <li><a href="ProductInfoAction.po?category=<%=cates.get(i)%>"><%=cates.get(i)%></a></li>
-               <%}%>
+               <li><a href="ProductInfoAction.po?category=ORIGINAL">ORIGINAL</a></li>
+               <li><a href="#">MOCHAGOLD</a></li>
+               <li><a href="#">ARABIVCA100</a></li>
+               <li><a href="#">MAXIMCAFE</a></li>
+               <li><a href="#">TASSIMO</a></li>
             </ul>
          </li>
          
