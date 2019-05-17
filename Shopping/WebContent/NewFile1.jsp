@@ -13,8 +13,8 @@
 		localStorage.setItem("cate",x);
 		document.getElementById("dd").value = localStorage.getItem("cate");
 		
-		window.location.replace("NewFile1.jsp?select="+x+"&name="+y);
-		//location.href = "NewFile2.jsp?select="+x+"&name="+y;
+		//window.location.replace("NewFile1.jsp?select="+x+"&name="+y);
+		location.href = "NewFile1.jsp?select="+x+"&name="+y;
 		
 	}
 </script>
